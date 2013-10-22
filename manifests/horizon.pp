@@ -73,6 +73,7 @@ class openstack::horizon (
   $keystone_default_role = 'Member',
   $django_debug          = 'False',
   $api_result_limit      = 1000
+  $
 ) {
 
   if $configure_memcached {
