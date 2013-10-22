@@ -176,6 +176,7 @@ class openstack::controller (
   $keystone_db_dbname      = 'keystone',
   $keystone_admin_tenant   = 'admin',
   $keystone_bind_address   = '0.0.0.0',
+  $keystone_scheme         = 'http',
   $region                  = 'RegionOne',
   $public_protocol         = 'http',
   $keystone_token_driver   = 'keystone.token.backends.kvs.Token',
@@ -221,6 +222,7 @@ class openstack::controller (
   $cache_server_ip         = '127.0.0.1',
   $cache_server_port       = '11211',
   $horizon_app_links       = undef,
+  $listen_ssl              = false,
   # VNC
   $vnc_enabled             = true,
   $vncproxy_host           = false,
@@ -556,6 +558,7 @@ class openstack::controller (
       cache_server_ip   => $cache_server_ip,
       cache_server_port => $cache_server_port,
       horizon_app_links => $horizon_app_links,
+      listen_ssl        => $keystone_scheme,
     }
   }
 
